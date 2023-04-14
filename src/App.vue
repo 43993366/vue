@@ -1,32 +1,39 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
+  <div id="app" class="container">
     <router-view/>
+    <div class="footer">
+      <FooterMenu></FooterMenu>
+    </div>
   </div>
 </template>
 
+<script>
+
+  import FooterMenu from './components/FooterMenu.vue';
+
+  export default {
+    components:{
+      FooterMenu
+    },
+  }
+</script>
+
 <style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #fcfcfc;
+  font-size: 25px;
 }
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.footer {
+  width: 100%;
+	bottom:0px;
+  height:calc(8vh);
+  min-height: 60px;
+	left: 0;
+  background-color: #db2d1f;
+  position: fixed;
 }
 </style>
