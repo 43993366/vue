@@ -1,6 +1,6 @@
 <template>
 	<div class="content">
-		<div v-for="(item,index) in imglist" :key="index" class="item">
+		<div v-for="(item,index) in img" :key="index" class="item">
 			<div class="show">
 				<img :src="item.url" />
 				<div class="name-text">{{item.name}}</div>
@@ -14,22 +14,12 @@
 		name:'HotShow',
 		data(){
 			return{
-				imglist:[{
-                    url: require('../../public/images/zaogao.jpg'),
-                    name: '糟糕!!!'
-                  },{
-                    url: require('../../public/images/3.jpeg'),
-                    name: '蓝色！'
-                  },{
-                    url: require('../../public/images/2.jpeg'),
-                    name: '黄色!'
-                  },{
-                    url: require('../../public/images/4.jpeg'),
-                    name: '蓝黄混合'
-                  }
-                ]
+				img:[]
 			}
-		}
+		},
+		mounted(){
+			this.img=this.$route.params.imglist
+		}	
 	}
 </script>
 

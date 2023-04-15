@@ -42,12 +42,46 @@ export default {
     TopSearch,
     Menu,
   },
+  data(){
+			return{
+				imglist:[{
+                    url: require('../../public/images/zaogao.jpg'),
+                    name: '糟糕!!!'
+                  },{
+                    url: require('../../public/images/3.jpeg'),
+                    name: '蓝色！'
+                  },{
+                    url: require('../../public/images/2.jpeg'),
+                    name: '黄色!'
+                  },{
+                    url: require('../../public/images/4.jpeg'),
+                    name: '蓝黄混合'
+                  }
+                ]
+			}
+	},
   methods: {
     MenuclickHandler: function (e) {
       this.menuIdx = e;
       switch(this.menuIdx){
-        case 0: this.$router.push("/home/Dynamic"); console.log('000');break;
-        case 1: this.$router.push("/home/HotShow"); console.log('111');break;
+        case 0: this.$router.push({name:"Dynamic",params:{imglist:this.imglist}});break;
+        case 1: this.$router.push(
+                { 
+                  name:"HotShow",
+                  params:{
+                    imglist:this.imglist
+                  }
+                }); break;
+        case 2: 
+          this.$router.push({
+            name:"image-list",
+            params:{id:"M"}
+          });break;
+        case 3: 
+          this.$router.push({
+            name:"image-list",
+            params:{id:"F"}
+          });break;
         default: this.$router.back();break;
       }
     },
@@ -95,6 +129,13 @@ export default {
   top: 10px;
   left: @num-left;
   overflow: hidden;
+}
+.main {
+  box-sizing: border-box;
+  width: 100%;
+  height:calc(80vh);
+  background-color: #ac6666;
+  overflow-y: scroll;
 }
 </style>
 

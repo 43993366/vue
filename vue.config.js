@@ -7,10 +7,10 @@ module.exports = defineConfig({
 			if (!devServer){
 				throw new Error( "webpack-dev-server未定义");
 			}
-			devServer.app.get( "/api/student",(req,res) => {
+			devServer.app.get("/api/student",(req,res) => {
 				res.jsonp({
 					sno:"5222511135",
-					name:"CSQ",
+					name:"陈世强",
 					desc: "实验6"
 				})
 			});

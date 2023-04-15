@@ -1,0 +1,19 @@
+[
+	{	
+		"id":"M",
+		"url":"./images/zaogao.jpg",
+		"name":"糟糕!!!"
+	  },{
+		"id":"M",
+		"url": "./images/3.jpeg",
+		"name": "蓝色！"
+	  },{
+		"id":"F",
+		"url":"./images/2.jpeg",
+		"name": "黄色!"
+	  },{
+		"id":"F",
+		"url":"./images/4.jpeg",
+		"name": "蓝黄混合"
+	  }
+]

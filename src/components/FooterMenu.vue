@@ -38,22 +38,6 @@ export default {
         },
     }
 }
-
-// export default {
-//     name:'FooterMenu',
-//     data() {
-//         return {
-//             tabIndex:0,
-//             btns:['#icon-chakansousuo','#icon-daka','#icon-huodong','#icon-yonghu'],
-//         }
-//     },
-//     methods:{
-//         tabClick(index){
-//             this.tabIndex=index;
-//             this.$emit('FooterClick',index);
-//         },
-//     }
-// }
 </script>
 
 <style>
@@ -66,7 +50,7 @@ export default {
 .default{
   opacity: 0.5;
 }
-.router-link-exact-active{
+.router-link-exact-active,.router-link-active{
   opacity: 1;
 }
 

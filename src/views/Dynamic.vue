@@ -11,6 +11,9 @@
 </template>
 
 <script>
+
+	import axios from 'axios';	
+
 	export default {
 		name:"Dynamic",
 		data(){
@@ -30,6 +33,23 @@
                   }
                 ]
 			}
+		},
+		methods:{
+			async getMockData(){
+				let id=this.$route.params.id;
+				let url="/api/mockData";
+				if((id!=undefined)&&( id!="")) url+=`/${id}`;
+				let result =await axios.get(url);
+				this.imglist=result.data;
+			}
+		},
+		watch:{
+			$route(){
+				this.getMockData();
+			}
+		},
+		created() {
+			this.getMockData();
 		}
 	};
 </script>

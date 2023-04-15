@@ -4,12 +4,12 @@
         <div class="info"> 
             <div class="img"><img  src="../../public/images/4.jpeg"  alt="头像"></div>
             <div class="name">
-                学号:5222511135<br>
-                姓名:陈世强
+                学号:{{ student.sno }}<br>
+                姓名:{{ student.name }}
             </div>
         </div>
         <div class="showTitle">
-            实验6
+            {{student.desc}}
         </div>
   </div>
 </template>
@@ -20,6 +20,17 @@
 export default {
     name:'MyInfo',
     props:['img'],
+    data(){
+        return{
+            student:{}
+        }
+    },
+    created() {
+		this.axios.get("/api/student").then(res=>{
+			this.student=res.data;
+		})
+        
+	},
 }
 </script>
 
